@@ -1,9 +1,23 @@
 # directory files
 .idea
 images/chromedriver.exe
-images/test/
-images/valid/
-images/test/
+
+# Remove all images, but keep files structures
+images/train/Albania/*.jpg
+images/train/Kyrgyzstan/*.jpg
+images/train/Mexico/*.jpg
+images/train/UnitedKingdom/*.jpg
+images/train/UnitedStates/*.jpg
+images/valid/Albania/*.jpg
+images/valid/Kyrgyzstan/*.jpg
+images/valid/Mexico/*.jpg
+images/valid/UnitedKingdom/*.jpg
+images/valid/UnitedStates/*.jpg
+images/test/Albania/*.jpg
+images/test/Kyrgyzstan/*.jpg
+images/test/Mexico/*.jpg
+images/test/UnitedKingdom/*.jpg
+images/test/UnitedStates/*.jpg
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,macos,linux
