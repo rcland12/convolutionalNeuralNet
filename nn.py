@@ -1,13 +1,14 @@
+import os
 import tensorflow as tf
+
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Activation, Dense, Flatten, BatchNormalization, Conv2D, MaxPool2D
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
-import os
 
 
 # Location of all folders
-folders = "D:\\CNN\\"
+folders = 
 classes = [name for name in os.listdir(folders + "images\\temp") if os.path.isdir(os.path.join(folders + "images\\temp", name))]
 
 train_path = folders + "images\\train\\"

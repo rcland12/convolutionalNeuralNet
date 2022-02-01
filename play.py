@@ -1,12 +1,12 @@
 import os
 import sys
 import glob
-from contextlib import contextmanager
-
 import pandas as pd
 import numpy as np
 import pyautogui
 import tensorflow as tf
+
+from contextlib import contextmanager
 from PIL import Image
 from columnar import columnar
 from tensorflow import keras
@@ -29,7 +29,7 @@ def suppress_stdout():
 model = keras.models.load_model("D:\\CNN")
 folder = "D:\\CNN\\"
 classes = [name for name in os.listdir(folder + "images\\temp") if
-           os.path.isdir(os.path.join(folder + "images\\temp", name))]
+           os.path.isdir(os.path.join(folder + "images\\temp", name)) and name != '.ipynb_checkpoints']
 
 # Remove temporary files from previous run
 for i in classes:
