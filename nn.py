@@ -8,12 +8,12 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 
 # Location of all folders
-folders = 
-classes = [name for name in os.listdir(folders + "images\\temp") if os.path.isdir(os.path.join(folders + "images\\temp", name))]
+folders = '/Users/russellland/Documents/projects/convolutionalNeuralNet/'
+classes = [name for name in os.listdir(folders + 'images/temp') if os.path.isdir(os.path.join(folders + 'images/temp/', name))]
 
-train_path = folders + "images\\train\\"
-valid_path = folders + "images\\valid\\"
-test_path = folders + "images\\test\\"
+train_path = folders + 'images/train'
+valid_path = folders + 'images/valid'
+test_path = folders + 'images/test'
 
 '''
 Using the VGG16 image processing for RBG images
@@ -81,6 +81,10 @@ model = Sequential([
     #     strides=2
     # ),
     Flatten(),                      # Flatten for output layer
+    # Dense(
+    #     units=128,
+    #     activation='relu'
+    # ),
     Dense(                          # Output layer
         units=len(classes),
         activation='softmax'
@@ -88,7 +92,7 @@ model = Sequential([
 ])
 
 model.compile(
-    optimizer=Adam(learning_rate=0.0001),
+    optimizer=Adam(learning_rate=0.0001, beta_1=0.5),
     loss='categorical_crossentropy',
     metrics=['accuracy']
 )
@@ -97,7 +101,7 @@ model.fit(
     x=train_batches,
     validation_data=valid_batches,
     epochs=10,
-    verbose=2
+    verbose=1
 )
 
-model.save("D:\CNN")
+model.save(folders + 'models')
